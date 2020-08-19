@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2019  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -225,113 +225,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 376 160 464 320))
-)
-(symbol
-	(rect 384 576 544 800)
-	(text "pllsystem" (rect 53 -1 119 15)(font "Arial" (font_size 10)))
-	(text "pll_system" (rect 8 208 61 225)(font "Intel Clear" ))
-	(port
-		(pt 0 72)
-		(input)
-		(text "refclk" (rect 0 0 31 14)(font "Arial" (font_size 8)))
-		(text "refclk" (rect 4 61 35 75)(font "Arial" (font_size 8)))
-		(line (pt 0 72)(pt 48 72))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "rst" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "rst" (rect 4 101 19 115)(font "Arial" (font_size 8)))
-		(line (pt 0 112)(pt 48 112))
-	)
-	(port
-		(pt 160 72)
-		(output)
-		(text "outclk_0" (rect 0 0 47 14)(font "Arial" (font_size 8)))
-		(text "outclk_0" (rect 117 61 164 75)(font "Arial" (font_size 8)))
-		(line (pt 160 72)(pt 112 72))
-	)
-	(port
-		(pt 160 112)
-		(output)
-		(text "outclk_1" (rect 0 0 47 14)(font "Arial" (font_size 8)))
-		(text "outclk_1" (rect 119 101 166 115)(font "Arial" (font_size 8)))
-		(line (pt 160 112)(pt 112 112))
-	)
-	(port
-		(pt 160 152)
-		(output)
-		(text "outclk_2" (rect 0 0 47 14)(font "Arial" (font_size 8)))
-		(text "outclk_2" (rect 117 141 164 155)(font "Arial" (font_size 8)))
-		(line (pt 160 152)(pt 112 152))
-	)
-	(port
-		(pt 160 192)
-		(output)
-		(text "outclk_3" (rect 0 0 47 14)(font "Arial" (font_size 8)))
-		(text "outclk_3" (rect 117 181 164 195)(font "Arial" (font_size 8)))
-		(line (pt 160 192)(pt 112 192))
-	)
-	(drawing
-		(text "refclk" (rect 16 43 50 58)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 53 67 67 79)(font "Arial" (color 0 0 0)))
-		(text "reset" (rect 19 83 52 98)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "reset" (rect 53 107 77 119)(font "Arial" (color 0 0 0)))
-		(text "outclk0" (rect 113 43 159 58)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 97 67 111 79)(font "Arial" (color 0 0 0)))
-		(text "outclk1" (rect 113 83 159 98)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 97 107 111 119)(font "Arial" (color 0 0 0)))
-		(text "outclk2" (rect 113 123 159 138)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 97 147 111 159)(font "Arial" (color 0 0 0)))
-		(text "outclk3" (rect 113 163 159 178)(font "Arial" (color 128 0 0)(font_size 9)))
-		(text "clk" (rect 97 187 111 199)(font "Arial" (color 0 0 0)))
-		(text " altera_pll " (rect 118 208 168 220)(font "Arial" ))
-		(line (pt 48 32)(pt 112 32))
-		(line (pt 112 32)(pt 112 208))
-		(line (pt 48 208)(pt 112 208))
-		(line (pt 48 32)(pt 48 208))
-		(line (pt 49 52)(pt 49 76))
-		(line (pt 50 52)(pt 50 76))
-		(line (pt 49 92)(pt 49 116))
-		(line (pt 50 92)(pt 50 116))
-		(line (pt 111 52)(pt 111 76))
-		(line (pt 110 52)(pt 110 76))
-		(line (pt 111 92)(pt 111 116))
-		(line (pt 110 92)(pt 110 116))
-		(line (pt 111 132)(pt 111 156))
-		(line (pt 110 132)(pt 110 156))
-		(line (pt 111 172)(pt 111 196))
-		(line (pt 110 172)(pt 110 196))
-		(line (pt 0 0)(pt 160 0))
-		(line (pt 160 0)(pt 160 224))
-		(line (pt 0 224)(pt 160 224))
-		(line (pt 0 0)(pt 0 224))
-	)
-)
-(symbol
-	(rect 320 672 368 704)
-	(text "NOT" (rect 1 0 21 10)(font "Arial" (font_size 6)))
-	(text "U1" (rect 3 21 15 38)(font "Intel Clear" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 13 16))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(line (pt 39 16)(pt 48 16))
-	)
-	(drawing
-		(line (pt 13 25)(pt 13 7))
-		(line (pt 13 7)(pt 31 16))
-		(line (pt 13 25)(pt 31 16))
-		(circle (rect 31 12 39 20))
-	)
 )
 (symbol
 	(rect 1160 568 1376 680)
@@ -564,31 +457,8 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (connector
-	(pt 368 648)
-	(pt 384 648)
-)
-(connector
-	(text "MEM-CLOCK_PEDGE" (rect 554 712 657 729)(font "Intel Clear" ))
-	(pt 544 728)
-	(pt 648 728)
-)
-(connector
-	(text "MEM-CLOCK_NEDGE" (rect 554 752 657 769)(font "Intel Clear" ))
-	(pt 544 768)
-	(pt 648 768)
-)
-(connector
 	(pt 304 688)
 	(pt 320 688)
-)
-(connector
-	(pt 368 688)
-	(pt 384 688)
-)
-(connector
-	(text "CORE-CLOCK_PEDGE" (rect 552 632 659 649)(font "Intel Clear" ))
-	(pt 544 648)
-	(pt 1016 648)
 )
 (connector
 	(pt 368 648)
@@ -756,15 +626,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1136 648)
 )
 (connector
-	(text "CORE-CLOCK_NEDGE" (rect 554 672 661 689)(font "Intel Clear" ))
-	(pt 544 688)
-	(pt 1080 688)
-)
-(connector
-	(pt 1080 392)
-	(pt 1080 688)
-)
-(connector
 	(text "read_decode[1]" (rect 1096 752 1170 769)(font "Intel Clear" ))
 	(pt 1160 768)
 	(pt 1136 768)
@@ -793,6 +654,11 @@ https://fpgasoftware.intel.com/eula.
 	(text "write_decode[3]" (rect 1096 1008 1172 1025)(font "Intel Clear" ))
 	(pt 1160 1024)
 	(pt 1136 1024)
+)
+(connector
+	(text "CORE-CLOCK_PEDGE" (rect 552 632 659 649)(font "Intel Clear" ))
+	(pt 368 648)
+	(pt 1016 648)
 )
 (junction (pt 1016 600))
 (junction (pt 1016 648))

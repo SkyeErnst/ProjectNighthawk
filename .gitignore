@@ -1,0 +1,30 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/alteraquartusii
+# Edit at https://www.toptal.com/developers/gitignore?templates=alteraquartusii
+######## Quartus II binary files
+
+# hardware binary files
+### project_name.sof SRAM Object File
+
+# software binary files
+
+*
+!*/
+!/*.gitignore
+##
+!**.qpf
+!**.qsf
+!**.qws
+!**.bdf
+!**.vhd
+!**.v
+!**.ptf
+!**.bsf
+!**/class.ptf
+!**.tbd
+!**.sof
+## tbd
+
+!**.tcl
+
+# End of https://www.toptal.com/developers/gitignore/api/alteraquartusii

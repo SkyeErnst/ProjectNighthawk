@@ -18,7 +18,7 @@ architecture rtl of direct_bus_control is
     signal q : std_logic_vector(7 downto 0) := (others => 'Z');
 begin
     
-    proc_name: process(i_clk, i_rst)
+    control: process(i_clk, i_rst)
     begin
         if i_rst = '0' then
             q <= (others => 'Z');
@@ -31,6 +31,6 @@ begin
                 end if;
             end if;
         end if;
-    end process proc_name;
+    end process control;
     
 end architecture rtl;

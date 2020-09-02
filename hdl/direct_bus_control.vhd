@@ -26,9 +26,12 @@ begin
             if (i_module_en = '0' AND i_rst = '1') then
                 if (i_write_enable = '1') then -- 'read' condition
                     q <= i_switches;
-                else
+                else                           -- 'write' condition
                     o_databus <= q;
                 end if;
+            end if;
+            if (i_module_en = '1' AND i_rst = '1') then -- Module disabled condition
+                o_databus   <= (others => 'Z');
             end if;
         end if;
     end process proc_name;

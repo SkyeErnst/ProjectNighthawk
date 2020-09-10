@@ -6,7 +6,7 @@ set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY "Nx8"
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
-set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:12:41 MARCH 05,2020"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
@@ -259,9 +259,10 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VHDL_FILE ../hdl/common.vhd
+set_global_assignment -name VHDL_FILE ../hdl/ALU.vhd
 set_global_assignment -name VHDL_FILE ../hdl/direct_bus_control.vhd
 set_global_assignment -name VHDL_FILE ../hdl/fourXone_decoder.vhd
-set_global_assignment -name VHDL_TEST_BENCH_FILE ../testbench/alu_tb.vhd
 set_global_assignment -name VHDL_TEST_BENCH_FILE ../hdl/reg_tb.vhd
 set_global_assignment -name VHDL_FILE ../hdl/user_control.vhd
 set_global_assignment -name VHDL_FILE ../hdl/reg.vhd

@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
+use work.common.all;
 
 entity ALU is
     port (
@@ -18,18 +19,17 @@ entity ALU is
 
         o_acc_out                                       : out std_logic_vector(7 downto 0)  := (others => '0');   -- accumulator port out
         o_err_flag                                      : out std_logic                     := '1'                -- generic error flag
+        
     );
 end entity ALU;
 
 architecture rtl of ALU is
 
-    type t_ops is (ADD, SUB, MUL, DIV, NEG, EXP, A_ABS, A_MOD, A_REM, TEQ, TNQ, TLT, TGT, TLE, TGE, LAND, LOR, LNAND, LNOR, LXOR, LXNOR, CSLL, CSRL, CSLA, CSRA, CROL, CROR, NOP);
-    type t_errors is (DIV_ZERO, BOUNDS_EXCEED, INVALID_SETUP, UNKNOWN, NONE);
-
     signal uacc             : unsigned(7 downto 0)  := (others => '0');
     signal sacc             : signed(7 downto 0)    := (others => '0');
     signal term_a, term_b   : unsigned(7 downto 0)  := (others => '0');
     signal n_error          : std_logic             := '1';
+	 
 begin
     
     p_on_clk: process(i_clk)
@@ -44,7 +44,7 @@ begin
                 o_err_flag <= '1';
             else
                 if (i_ready = '0' AND n_error = '1') then
-                    case i_op_sel is
+                    case to_err(i_op_sel) is
                         when ADD =>
                             if (i_signed = '0') then
                                 uacc <= term_a + term_b;
@@ -62,8 +62,9 @@ begin
                                 uacc <= term_a * term_b;
                             else
                                 sacc <= signed(term_a) * signed(term_b);
+                            end if;
                         when DIV =>
-                            if (term_b = '0') then
+                            if (term_b = 0) then
                                 o_err_flag <= '0';
                             else
                                 if (i_signed = '0') then
@@ -71,8 +72,10 @@ begin
                                 else
                                     sacc <= signed(term_a) / signed(term_b);
                                 end if;
+                            end if;
                         when NEG =>
-                            sacc <=  signed(-term_a);
+                            --sacc <=  signed(-term_a);
+                            o_err_flag <= '0';
                         when EXP =>
                             if (i_signed = '0') then
                                 uacc <= term_a ** term_b;
@@ -102,7 +105,7 @@ begin
                         when CROR =>
                         when NOP =>
                         when others =>
-                            
+                            o_err_flag <= '0';
                     end case;
                 else
                     -- Handles loading into term A
@@ -147,6 +150,7 @@ begin
                             o_acc_out <= uacc;
                         else
                             o_acc_out <= sacc;
+								end if;
                     else
                         o_acc_out <= (others => 'Z');
                     end if;
